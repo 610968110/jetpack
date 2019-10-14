@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun livedata(view: View) {
-        // 10000
+        // 100w
         startActivity(Intent(this, LiveDataActivity::class.java))
     }
 }
