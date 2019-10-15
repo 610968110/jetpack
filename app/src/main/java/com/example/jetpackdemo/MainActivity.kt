@@ -14,8 +14,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
     }
 
     fun paged(view: View) {
@@ -30,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, TestActivity::class.java))
     }
 
-    fun livedata(view: View) {
+    fun liveData(view: View) {
         startActivity(Intent(this, LiveDataActivity::class.java))
     }
 }
