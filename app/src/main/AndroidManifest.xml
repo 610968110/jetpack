@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".navigation.HostActivity"></activity>
         <activity android:name=".livedata.LiveDataActivity" />
         <activity android:name=".koin.TestActivity" />
         <activity android:name=".room.RoomActivity" />

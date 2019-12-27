@@ -30,4 +30,10 @@
         android:onClick="liveData"
         android:text="liveData" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="navigation"
+        android:text="navigation" />
+
 </LinearLayout>

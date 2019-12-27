@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.jetpackdemo.build.Msg.Companion.MSG
 import com.example.jetpackdemo.koin.TestActivity
 import com.example.jetpackdemo.livedata.LiveDataActivity
+import com.example.jetpackdemo.navigation.HostActivity
 import com.example.jetpackdemo.paged.PagedActivity
 import com.example.jetpackdemo.room.RoomActivity
 
@@ -33,5 +34,9 @@ class MainActivity : AppCompatActivity() {
 
     fun liveData(view: View) {
         startActivity(Intent(this, LiveDataActivity::class.java))
+    }
+
+    fun navigation(view: View) {
+        startActivity(Intent(this, HostActivity::class.java))
     }
 }
