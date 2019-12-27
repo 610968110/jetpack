@@ -3,7 +3,9 @@ package com.example.jetpackdemo
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.jetpackdemo.build.Msg.Companion.MSG
 import com.example.jetpackdemo.koin.TestActivity
 import com.example.jetpackdemo.livedata.LiveDataActivity
 import com.example.jetpackdemo.paged.PagedActivity
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Toast.makeText(this, MSG, Toast.LENGTH_SHORT).show()
     }
 
     fun paged(view: View) {

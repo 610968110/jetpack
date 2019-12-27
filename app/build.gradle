@@ -21,6 +21,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "color"
+
+    productFlavors {
+        normal {
+            dimension "color"
+            manifestPlaceholders = [APP_NAME: "@string/app_name"]
+        }
+        dev {
+            dimension "color"
+            manifestPlaceholders = [APP_NAME: "@string/app_name_dev"]
+        }
+    }
 }
 
 dependencies {
