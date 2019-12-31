@@ -17,5 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/main_navigation"
         tools:layout="@layout/a_fragment" />
+    <!--  defaultNavHost,是否拦截返回键事件, false表示不需要回退栈  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

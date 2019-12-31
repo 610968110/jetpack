@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.findNavController
 import com.example.jetpackdemo.R
 import kotlinx.android.synthetic.main.a_fragment.*
 
@@ -24,9 +24,11 @@ class BFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = NavHostFragment.findNavController(this)
         navigate_btn.setOnClickListener {
-            navController.navigate(R.id.action_BFragment_to_AFragment)
+            val action = AFragmentDirections.actionAFragmentToBFragment()
+            val bundle = Bundle()
+            bundle.putString("text", System.currentTimeMillis().toString())
+            it.findNavController().navigate(R.id.action_BFragment_to_AFragment, bundle)
         }
     }
 }

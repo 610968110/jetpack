@@ -14,6 +14,10 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="text"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/BFragment"
@@ -29,7 +33,7 @@
             app:popUpTo="@id/AFragment"
             app:popUpToInclusive="true" />
         <!-- popUpTo的意思是把stack中的destinations都pop掉
-        直到最後的Destination跟指定id一樣時 -->
+             直到最後的Destination跟指定id一樣時 -->
         <!-- popUpInclusive 的意思是pop到A，且把A destination也pop掉 -->
     </fragment>
 </navigation>
