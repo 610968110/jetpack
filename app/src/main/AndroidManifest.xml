@@ -10,17 +10,24 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".navigation.HostActivity"></activity>
-        <activity android:name=".livedata.LiveDataActivity" />
-        <activity android:name=".koin.TestActivity" />
-        <activity android:name=".room.RoomActivity" />
-        <activity android:name=".paged.PagedActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".launch.CoroutinesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".navigation.HostActivity" />
+        <activity android:name=".livedata.LiveDataActivity" />
+        <activity android:name=".koin.TestActivity" />
+        <activity android:name=".room.RoomActivity" />
+        <activity android:name=".paged.PagedActivity" />
+        <activity android:name=".MainActivity">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
     </application>
 

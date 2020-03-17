@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">圣诞快乐</string>
-    <string name="app_name_dev">圣诞快乐dev</string>
+    <string name="app_name">demo</string>
+    <string name="app_name_dev">demo dev</string>
 </resources>

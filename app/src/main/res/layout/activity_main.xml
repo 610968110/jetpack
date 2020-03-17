@@ -36,4 +36,10 @@
         android:onClick="navigation"
         android:text="navigation" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="launch"
+        android:text="协程" />
+
 </LinearLayout>
