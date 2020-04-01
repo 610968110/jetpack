@@ -42,4 +42,10 @@
         android:onClick="launch"
         android:text="协程" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="channel"
+        android:text="通道" />
+
 </LinearLayout>

@@ -6,8 +6,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jetpackdemo.build.Msg.Companion.MSG
+import com.example.jetpackdemo.channel.ChannelActivity
+import com.example.jetpackdemo.coroutines.CoroutinesActivity
 import com.example.jetpackdemo.koin.TestActivity
-import com.example.jetpackdemo.launch.CoroutinesActivity
 import com.example.jetpackdemo.livedata.LiveDataActivity
 import com.example.jetpackdemo.navigation.HostActivity
 import com.example.jetpackdemo.paged.PagedActivity
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     fun launch(view: View) {
         startActivity(Intent(this, CoroutinesActivity::class.java))
+    }
+
+    fun channel(view: View) {
+        startActivity(Intent(this, ChannelActivity::class.java))
     }
 }
 
