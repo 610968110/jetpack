@@ -1,11 +1,14 @@
 package com.example.jetpackdemo.coroutines
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jetpackdemo.R
+import com.example.jetpackdemo.logLine
+import com.example.jetpackdemo.println
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -80,6 +83,26 @@ class CoroutinesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutines)
+
+        suspend fun doSomethingUsefulOne(): Int {
+            delay(1000L) // 假设我们在这里做了些有用的事
+            return 13
+        }
+
+        suspend fun doSomethingUsefulTwo(): Int {
+            delay(1000L) // 假设我们在这里也做了些有用的事
+            return 29
+        }
+
+        fun main() = runBlocking {
+            val time = measureTimeMillis {
+                val one = async { doSomethingUsefulOne() }
+                val two = async(start = CoroutineStart.LAZY) { doSomethingUsefulTwo() }
+                println("The answer is ${one.await() + two.await()}")
+            }
+            println("Completed in $time ms")
+        }
+
         GlobalScope.launch(Dispatchers.Main) {
             println("onCreate in")
 
@@ -281,29 +304,5 @@ class CoroutinesActivity : AppCompatActivity() {
         emit("$i: Second")
         delay(500) // wait 500 ms
         emit("$i: Third")
-    }
-
-    private fun logLine(any: Any) {
-        println("---------- $any ----------", false)
-    }
-
-    private fun println(any: Any, printThread: Boolean = false) {
-        val threadName = if (printThread) {
-            " [${Thread.currentThread().name}]"
-        } else {
-            " "
-        }
-        when (any) {
-            is String, is Int -> {
-                Log.e("xys", "$any$threadName")
-            }
-            else -> {
-                Log.e("xys", "$any$threadName")
-            }
-        }
-    }
-
-    private fun Any.println() {
-        println(this)
     }
 }

@@ -1,7 +1,13 @@
 package com.example.jetpackdemo
 
 import android.app.Application
-import com.example.jetpackdemo.koin.*
+import android.util.Log
+import com.example.jetpackdemo.koin.InjectViewModule
+import com.example.jetpackdemo.koin.Scope2ViewModule
+import com.example.jetpackdemo.koin.ScopeViewModule
+import com.example.jetpackdemo.koin.SingleTestViewModel
+import com.example.jetpackdemo.koin.TestActivity
+import com.example.jetpackdemo.koin.TestViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -48,4 +54,28 @@ class App : Application() {
             modules(appModule)
         }
     }
+}
+
+fun logLine(any: Any) {
+    println("---------- $any ----------", false)
+}
+
+fun println(any: Any, printThread: Boolean = false) {
+    val threadName = if (printThread) {
+        " [${Thread.currentThread().name}]"
+    } else {
+        " "
+    }
+    when (any) {
+        is String, is Int -> {
+            Log.e("xys", "$any$threadName")
+        }
+        else -> {
+            Log.e("xys", "$any$threadName")
+        }
+    }
+}
+
+fun Any.println() {
+    println(this)
 }
