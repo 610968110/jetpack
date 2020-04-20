@@ -14,14 +14,16 @@ import androidx.room.PrimaryKey
  * Desc:
  * @ForeignKey   定义外键约束
  */
-@Entity(tableName = "user")
-data class User(
+@Entity(
+    tableName = "author"
+)
+data class Author(
     @PrimaryKey
     var id: Int = 0,
     @ColumnInfo(name = "name")
     var name: String = "",
     @ColumnInfo(name = "age")
     var age: Int = 0,
-    @Ignore
-    var sex: String = ""
+    @Ignore // 不是忽略这个字段，而是忽略这个字段的赋值
+    var sex: String = "不知道啊"
 )

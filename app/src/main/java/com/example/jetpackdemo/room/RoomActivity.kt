@@ -7,6 +7,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jetpackdemo.R
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
 
 class RoomActivity : AppCompatActivity() {
 
@@ -14,6 +17,7 @@ class RoomActivity : AppCompatActivity() {
     private lateinit var nameView: EditText
     private lateinit var ageView: EditText
     private lateinit var dao: UserDao
+    private lateinit var bookDao: BookDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +26,7 @@ class RoomActivity : AppCompatActivity() {
         nameView = findViewById(R.id.et_name)
         ageView = findViewById(R.id.et_age)
         dao = AppDatabase.getInstance(this).userDao()
+        bookDao = AppDatabase.getInstance(this).bookDao()
     }
 
     fun insert(view: View) {
@@ -76,4 +81,40 @@ class RoomActivity : AppCompatActivity() {
         Log.e("xys", "当前有${users.size}条数据")
     }
 
+    /**
+     * 级联插入
+     */
+    fun add1(view: View) {
+        GlobalScope.launch {
+            bookDao.addAuthor(Author(id = 0, name = "张胜男", age = 17, sex = "未知"))
+            bookDao.addAuthor(Author(id = 1, name = "张胜男baba", age = 170, sex = "未知"))
+            Log.e("xys", "${bookDao.findAllAuthor()}")
+
+            bookDao.addBook(Book(title = "金瓶梅", authorId = 0))
+            Log.e("xys", "${bookDao.findAllBook()}")
+        }
+    }
+
+    /**
+     * 级联修改
+     */
+    fun update1(view: View) {
+        // 没法写，因为外键值主键id，up后就添加新的了，这里需要改成其他外键，略~
+    }
+
+    /**
+     * 级联删除
+     */
+    fun del1(view: View) {
+        bookDao.delAllAuthor()
+        Log.e("xys", "book:${bookDao.findAllAuthor()}")
+        Log.e("xys", "author:${bookDao.findAllBook()}")
+    }
+
+    /**
+     * 级联删视图
+     */
+    fun view1(view: View) {
+        Log.e("xys", "${bookDao.findAllBookView()}")
+    }
 }
