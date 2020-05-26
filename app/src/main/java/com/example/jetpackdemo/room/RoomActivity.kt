@@ -115,6 +115,6 @@ class RoomActivity : AppCompatActivity() {
      * 级联删视图
      */
     fun view1(view: View) {
-        Log.e("xys", "${bookDao.findAllBookView()}")
+//        Log.e("xys", "${bookDao.findAllBookView()}")
     }
 }

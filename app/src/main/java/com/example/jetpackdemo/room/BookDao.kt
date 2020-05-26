@@ -37,6 +37,6 @@ abstract class BookDao {
     @Query("DELETE FROM author")
     abstract fun delAllAuthor()
 
-    @Query("SELECT * FROM BookView")
-    abstract fun findAllBookView(): List<BookView>
+//    @Query("SELECT * FROM BookView")
+//    abstract fun findAllBookView(): List<BookView>
 }
