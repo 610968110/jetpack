@@ -48,6 +48,12 @@
         android:onClick="channel"
         android:text="通道" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="workManager"
+        android:text="workManager" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fv_main"
         android:layout_width="match_parent"

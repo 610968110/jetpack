@@ -19,6 +19,7 @@ import com.example.jetpackdemo.livedata.LiveDataActivity
 import com.example.jetpackdemo.navigation.HostActivity
 import com.example.jetpackdemo.paged.PagedActivity
 import com.example.jetpackdemo.room.RoomActivity
+import com.example.jetpackdemo.workmanager.WorkManagerActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 delay(3000)
                 it.beginTransaction()
                     .replace(R.id.fv_main, TestFragment.newInstance(Color.BLUE))
-                    .commit()
+                    .commitAllowingStateLoss()
             }
         }
     }
@@ -69,6 +70,10 @@ class MainActivity : AppCompatActivity() {
 
     fun channel(view: View) {
         startActivity(Intent(this, ChannelActivity::class.java))
+    }
+
+    fun workManager(view: View) {
+        startActivity(Intent(this, WorkManagerActivity::class.java))
     }
 }
 
