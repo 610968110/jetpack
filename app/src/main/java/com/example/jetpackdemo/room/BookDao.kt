@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2019 Huami Inc. All Rights Reserved.
- */
 package com.example.jetpackdemo.room
 
 import androidx.room.Dao
@@ -11,7 +8,6 @@ import androidx.room.Update
 
 /**
  * Author: liboxin
- * Email: liboxin@huami.com
  * Date: 2020/4/20
  * Time: 11:03
  * Desc:

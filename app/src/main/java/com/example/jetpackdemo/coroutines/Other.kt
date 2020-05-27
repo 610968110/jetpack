@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2019 Huami Inc. All Rights Reserved.
- */
 package com.example.jetpackdemo.coroutines
 
 import com.example.jetpackdemo.println
@@ -22,7 +19,6 @@ import kotlin.system.measureTimeMillis
 
 /**
  * Author: liboxin
- * Email: liboxin@huami.com
  * Date: 2020/4/2
  * Time: 14:36
  * Desc:

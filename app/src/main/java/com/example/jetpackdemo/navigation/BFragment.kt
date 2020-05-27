@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2019 Huami Inc. All Rights Reserved.
- */
 package com.example.jetpackdemo.navigation
 
 import android.os.Bundle

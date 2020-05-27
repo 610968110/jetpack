@@ -6,9 +6,6 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 /**
- * Copyright © 2013-2019 Worktile. All Rights Reserved.
- * Author: Huami
- * Email: Huami@worktile.com
  * Date: 2019/10/10
  * Time: 15:28
  * Desc:

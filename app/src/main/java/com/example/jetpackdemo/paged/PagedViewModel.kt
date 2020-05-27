@@ -10,9 +10,6 @@ import com.example.jetpackdemo.room.AppDatabase
 import com.example.jetpackdemo.room.User
 
 /**
- * Copyright © 2013-2019 Worktile. All Rights Reserved.
- * Author: Huami
- * Email: Huami@worktile.com
  * Date: 2019/10/10
  * Time: 15:16
  * Desc:
