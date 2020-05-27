@@ -3,6 +3,7 @@ package com.example.jetpackdemo
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                     .commitAllowingStateLoss()
             }
         }
+
+        Log.e("xys", "DSL:${"kotlin" should start with "ko"}")
     }
 
     fun paged(view: View) {
@@ -107,4 +110,23 @@ class TestFragment : Fragment() {
     }
 
 }
+
+abstract class Fix {
+    var handleString: String? = null
+}
+
+object start : Fix()
+
+infix fun String.should(fix: Fix): Fix = with(fix) {
+    handleString = this@should
+    this
+}
+
+infix fun Fix.with(str: String): Boolean? =
+    when (this) {
+        is start -> {
+            handleString?.startsWith(str)
+        }
+        else -> null
+    }
 
